@@ -1,0 +1,50 @@
+{
+  "name": "rollup-plugin-css2",
+  "version": "0.0.1-beta.1",
+  "description": "CSS transformer plugin for Rollup",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "ava",
+    "test:watch": "ava --watch",
+    "build": "rollup -c rollup.config.js",
+    "prepublish": "npm run build && npm run test"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js",
+      "!test/entrys",
+      "!test/styles",
+      "!test/dist"
+    ],
+    "verbose": true
+  },
+  "keywords": [
+    "css",
+    "rollup",
+    "rollup-plugin",
+    "rollup-plugin-css"
+  ],
+  "files": [
+    "dist",
+    "types",
+    "LICENSE",
+    "README.md"
+  ],
+  "author": "ocean",
+  "license": "MIT",
+  "dependencies": {
+    "@parcel/css": "^1.0.0",
+    "@rollup/pluginutils": "^4.1.2"
+  },
+  "devDependencies": {
+    "ava": "^4.0.1",
+    "esbuild": "^0.14.11",
+    "rollup": "^2.63.0",
+    "rollup-plugin-esbuild": "^4.8.2"
+  },
+  "peerDependencies": {
+    "rollup": "^2.63.0"
+  }
+}

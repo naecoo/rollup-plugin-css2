@@ -1,0 +1,10 @@
+.foo {
+  font-size: 1.5em;
+  & bar {
+    font-weight: 500;
+  }
+}
+
+main {
+  display: block;
+}
