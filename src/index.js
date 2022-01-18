@@ -6,21 +6,20 @@ const isString = (val) => typeof val === 'string';
 
 const isFunction = (val) => typeof val === 'function';
 
-const pluginGenerator = (options = {}) => {
-	options = Object.assign(
-		{
-			include: ['**/*.css'],
-			exclude: [],
-			transformOptions: {
-				minify: false,
-				targets: {},
-				drafts: {
-					nesting: false
-				}
+const pluginGenerator = (customOptions = {}) => {
+	const options = {
+		include: ['**/*.css'],
+		exclude: [],
+		transformOptions: {
+			minify: false,
+			targets: {},
+			drafts: {
+				nesting: false
 			}
 		},
-		options
-	);
+		...customOptions
+	};
+
 
 	const filter = createFilter(options.include, options.exclude);
 	const styles = new Map();
