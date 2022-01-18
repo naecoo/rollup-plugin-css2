@@ -1,5 +1,8 @@
 # rollup-plugin-css2
 
+Rollup plugin for CSS file.
+
+
 ## Install
 
 ```bash
